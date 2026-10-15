@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YZD ARY COMMUNITY | This is What Art School Should Be!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fbf8eb',
+                            100: '#f5eccb',
+                            200: '#edd89a',
+                            300: '#e2be62',
+                            400: '#d9a638',
+                            500: '#c88d23',
+                            600: '#ac6e1b',
+                            700: '#895119',
+                        },
+                        obsidian: {
+                            950: '#090a0c',
+                            900: '#111317',
+                            800: '#1a1d24',
+                            700: '#262b35',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090a0c;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(9, 10, 12, 0.65), rgba(9, 10, 12, 0.92), #090a0c), 
+                              url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1920&q=85');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5eccb 0%, #d9a638 50%, #ac6e1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #d9a638 0%, #b87b1e 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(217, 166, 56, 0.4);
+        }
+        .gold-btn:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 15px 30px -5px rgba(217, 166, 56, 0.6);
+            filter: brightness(1.08);
+        }
+        .card-hover {
+            transition: all 0.35s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(217, 166, 56, 0.5);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(217, 166, 56, 0.15);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262b35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d9a638;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-obsidian-900 via-gold-700/30 to-obsidian-900 border-b border-gold-500/20 py-2 px-4 text-center text-xs sm:text-sm font-medium text-gold-200">
+        <span class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+            <span data-i18n="top_banner">Pendaftaran Anggota Baru Dibuka! Akses 500+ Jam Materi Lukis HD & Sesi Live Studio Mingguan.</span>
+        </span>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center text-obsidian-950 font-display font-extrabold text-xl shadow-lg shadow-gold-500/20 group-hover:rotate-6 transition-transform">
+                    YA
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-bold text-lg sm:text-xl tracking-wider text-white">YZD ARY</span>
+                    <span class="text-[10px] tracking-[0.28em] text-gold-400 font-semibold -mt-1">COMMUNITY</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-gold-400 transition-colors" data-i18n="nav_about">Tentang Kami</a>
+                <a href="#features" class="hover:text-gold-400 transition-colors" data-i18n="nav_features">Fitur & Keunggulan</a>
+                <a href="#courses" class="hover:text-gold-400 transition-colors" data-i18n="nav_courses">Kurikulum</a>
+                <a href="#community" class="hover:text-gold-400 transition-colors" data-i18n="nav_community">Komunitas</a>
+                <a href="#pricing" class="hover:text-gold-400 transition-colors" data-i18n="nav_pricing">Keanggotaan</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <!-- Language Switcher -->
+                <button onclick="toggleLanguage()" id="langBtn" class="px-3 py-1.5 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-white/10 text-xs font-semibold text-gray-200 flex items-center gap-1.5 transition" title="Ganti Bahasa / Switch Language">
+                    <i class="fa-solid fa-globe text-gold-400"></i>
+                    <span id="currentLangLabel">ID</span>
+                </button>
+
+                <button onclick="openModal('contactModal')" class="hidden sm:inline-flex text-sm text-gray-300 hover:text-white px-3 py-2 transition" data-i18n="nav_contact">
+                    Contact
+                </button>
+
+                <button onclick="openModal('loginModal')" class="text-sm font-medium text-white bg-obsidian-800 hover:bg-obsidian-700 border border-white/15 px-4 py-2 rounded-lg transition" data-i18n="nav_login">
+                    Log In
+                </button>
+
+                <a href="#pricing" class="hidden lg:inline-flex gold-btn text-obsidian-950 font-bold text-sm px-5 py-2.5 rounded-lg" data-i18n="nav_join">
+                    Sign Up Today!
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-bg relative pt-16 pb-24 lg:pt-24 lg:pb-32 border-b border-white/10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="uppercase tracking-[0.35em] text-gold-400 font-semibold text-xs sm:text-sm mb-3" data-i18n="hero_welcome">
+                    WELCOME TO
+                </p>
+                <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white mb-4">
+                    YZD ARY <span class="gold-gradient-text">COMMUNITY</span>
+                </h1>
+                <p class="font-serif italic text-xl sm:text-3xl text-gray-200 mb-8" data-i18n="hero_subtitle">
+                    "This is what Art School should be!" — Beginilah Seharusnya Sekolah Seni!
+                </p>
+
+                <!-- Featured Video Showcase Box -->
+                <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gold-500/30 bg-obsidian-900 mb-10 group cursor-pointer" onclick="openModal('videoModal')">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=85" 
+                             alt="YZD ARY Studio Painting" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+                             onerror="this.src='https://placehold.co/1280x720/111317/d9a638?text=YZD+ARY+COMMUNITY+STUDIO'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/30 to-transparent"></div>
+                        
+                        <!-- Play Button Overlay -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4">
+                            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gold-500/90 text-obsidian-950 flex items-center justify-center shadow-2xl shadow-gold-500/50 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-2xl sm:text-3xl ml-1"></i>
+                            </div>
+                            <span class="mt-4 px-4 py-1.5 rounded-full bg-obsidian-950/80 border border-white/15 text-xs sm:text-sm font-medium text-gold-200 backdrop-blur-sm" data-i18n="hero_watch_trailer">
+                                Tonton Cuplikan Eksklusif YZD ARY COMMUNITY (2:45)
+                            </span>
+                        </div>
+
+                        <!-- Bottom Video Info Bar -->
+                        <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between text-xs text-gray-300 px-2">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-film text-gold-400"></i> 4K Ultra HD Masterclass</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-closed-captioning text-gold-400"></i> Multilingual Subtitles Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="max-w-2xl mx-auto text-base sm:text-xl text-gray-300 mb-8 leading-relaxed" data-i18n="hero_desc">
+                    <strong>YZD ARY COMMUNITY</strong> memberdayakan para seniman dengan keahlian teknik tingkat tinggi dan dukungan komunitas yang mereka butuhkan untuk membawa karya seni mereka ke <span class="text-gold-400 font-bold italic underline decoration-gold-500/50">NEXT LEVEL!</span>
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#pricing" class="w-full sm:w-auto gold-btn text-obsidian-950 font-extrabold text-base sm:text-lg px-10 py-4 rounded-xl tracking-wide uppercase flex items-center justify-center gap-3">
+                        <span data-i18n="cta_signup">Sign Up Today!</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#courses" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-obsidian-800 hover:bg-obsidian-700 border border-white/15 font-semibold text-white transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-palette text-gold-400"></i>
+                        <span data-i18n="cta_explore">Lihat 500+ Jam Kursus</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHAT IS YZD ARY COMMUNITY? -->
+        <section id="about" class="py-20 lg:py-28 bg-obsidian-900 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Text Column -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-widest">
+                            <i class="fa-solid fa-award"></i> Real Art Education
+                        </div>
+                        <h2 class="font-display font-bold text-3xl sm:text-5xl text-white leading-tight" data-i18n="what_title">
+                            Apa itu YZD ARY COMMUNITY?
+                        </h2>
+                        <div class="space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed">
+                            <p data-i18n="what_p1">
+                                <strong>YZD ARY COMMUNITY</strong> adalah <strong class="text-white">pendidikan seni online yang benar-benar berhasil (actually works)</strong>.
+                            </p>
+                            <p data-i18n="what_p2">
+                                Halo! Saya <strong>Yzd Ary</strong>, pendiri dan instruktur utama Anda. Selama lebih dari 20 tahun berkarya sebagai seniman profesional, saya telah mendedikasikan hidup saya untuk mengasah keahlian melukis, dan sekarang saya ingin membagikan kepada Anda <strong>SECARA PERSIS</strong> bagaimana saya menciptakan setiap mahakarya.
+                            </p>
+                            <p data-i18n="what_p3">
+                                Saya menghabiskan bertahun-tahun mempelajari teknik para maestro klasik (<em>Old Masters</em>) — lalu membedahnya menjadi metode yang sangat mudah dipahami sehingga Anda dapat langsung menerapkannya pada karya Anda dan mempercepat waktu kreatif Anda berkali-kali lipat.
+                            </p>
+                            <p data-i18n="what_p4">
+                                Di <strong>YZD ARY COMMUNITY</strong>, Anda akan menerima instruksi mendalam yang membedah setiap aspek lukisan secara teliti. Anda akan dipandu langkah demi langkah melalui demonstrasi melukis berdurasi penuh (<em>feature-length</em>) — dengan setiap teknik dijelaskan secara transparan. Kami bahkan mengadakan sesi <strong>LIVE dari studio setiap minggu</strong> — sesi yang padat ilmu, informatif, dan sangat menyenangkan!
+                            </p>
+                        </div>
+                        <div class="pt-2">
+                            <p class="font-serif italic text-xl sm:text-2xl text-gold-400 font-semibold" data-i18n="what_quote">
+                                "Ini adalah pendidikan seni sejati yang benar-benar memberikan hasil nyata!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-gold-500/30 shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=85" 
+                                 alt="Yzd Ary Studio Masterclass" 
+                                 class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x750/1a1d24/d9a638?text=YZD+ARY+FOUNDER'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-obsidian-950/85 backdrop-blur-md border border-white/10">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-display font-bold text-white text-lg">YZD ARY</p>
+                                        <p class="text-xs text-gold-400">Founder & Lead Master Instructor</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-2xl font-extrabold text-white">20+</span>
+                                        <p class="text-[11px] text-gray-400">Years Pro Experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WHO IS IT FOR? -->
+        <section class="py-20 lg:py-28 bg-obsidian-950 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Palette Image -->
+                    <div class="lg:col-span-5 order-2 lg:order-1">
+                        <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85" 
+                                 alt="Artist Oil Palette" 
+                                 class="w-full h-[440px] object-cover"
+                                 onerror="this.src='https://placehold.co/600x600/1a1d24/d9a638?text=Artist+Palette'">
+                            <div class="absolute top-4 left-4 bg-obsidian-950/90 backdrop-blur-md border border-gold-500/40 rounded-xl px-4 py-2.5 text-xs font-bold text-gold-300 flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group"></i> Beginner • Intermediate • Advanced
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                        <h2 class="font-display font-bold text-3xl sm:text-5xl text-white" data-i18n="who_title">
+                            Untuk Siapa YZD ARY COMMUNITY?
+                        </h2>
+                        <p class="text-xl font-semibold text-gold-400" data-i18n="who_subtitle">
+                            Kami melayani SEMUA tingkatan keahlian, dari pemula hingga profesional!
+                        </p>
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="who_p1">
+                            Baik Anda seorang <strong>Pemula (Beginner), Menengah (Intermediate), maupun Mahir (Advanced)</strong>, kami siap membimbing Anda! Jika Anda baru memulai memegang kuas atau sudah menjadi pelukis berpengalaman, <strong>YZD ARY COMMUNITY</strong> dirancang untuk membantu Anda bertumbuh di setiap tahapan perjalanan artistik Anda.
+                        </p>
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="who_p2">
+                            Dengan beragam pilihan kursus yang mencakup segalanya mulai dari <strong>lukisan pemandangan (landscapes), potret wajah (portraits), benda mati (still life), hingga satwa liar (wildlife)</strong> — Anda akan menemukan pelajaran yang sesuai dengan kebutuhan dan tujuan Anda.
+                        </p>
+                        
+                        <div class="p-4 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-200 font-semibold italic">
+                            <i class="fa-solid fa-clock text-gold-400 mr-2"></i>
+                            <span data-i18n="who_pace">Dan bagian terbaiknya — Anda dapat belajar sesuai kecepatan Anda sendiri (learn at your own pace)!</span>
+                        </div>
+
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed" data-i18n="who_p3">
+                            Lampaui batas kemampuan Anda dan temukan keahlian baru bersama sesama seniman melalui tantangan grup berkala kami (<em>regular group challenges</em>), tempat Anda akan mendapatkan inspirasi, membangun kepercayaan diri, dan mengeksplorasi teknik baru.
+                        </p>
+
+                        <div class="pt-2">
+                            <a href="#pricing" class="inline-flex items-center gap-3 gold-btn text-obsidian-950 font-extrabold px-8 py-4 rounded-xl uppercase tracking-wide">
+                                <span data-i18n="cta_join_community">Join YZD ARY COMMUNITY!</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: COMMUNITY TRIBE -->
+        <section id="community" class="py-20 lg:py-28 bg-obsidian-900 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-400">4,900+ Global Artists</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-2 mb-6" data-i18n="comm_title">
+                        Bagikan Karya Anda dan Temukan Sahabat Baru!
+                    </h2>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-4" data-i18n="comm_p1">
+                        Di <strong>YZD ARY COMMUNITY</strong>, <strong>komunitas</strong> adalah jantung dari semua yang kami lakukan. Sebagai anggota, Anda akan bergabung dengan ruang online eksklusif tempat Anda dapat terhubung, membagikan karya, dan berkolaborasi dengan sesama seniman. Buletin khusus anggota kami penuh dengan artikel bermanfaat, tips, dan wawasan untuk membantu Anda berkembang.
+                    </p>
+                    <p class="text-gold-300 font-medium text-lg" data-i18n="comm_p2">
+                        Ini lebih dari sekadar tempat belajar; ini adalah komunitas kreatif yang saling menginspirasi dan mendukung. Jadilah bagian dari YZD ARY COMMUNITY dan temukan "Artistic Tribe" Anda!
+                    </p>
+                </div>
+
+                <!-- Community Showcase Mockup Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-obsidian-800 border border-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Member" class="w-12 h-12 rounded-full object-cover border-2 border-gold-400">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Elena Rostova</h4>
+                                <p class="text-xs text-gold-400">VIP Member • Oil Landscape</p>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=600&q=80" alt="Member Art" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-sm text-gray-300 italic">"Kritik karya bulanan di YZD ARY COMMUNITY mengubah cara saya mencampur warna langit dan cahaya senja secara drastis!"</p>
+                    </div>
+
+                    <div class="bg-obsidian-800 border border-gold-500/30 rounded-2xl p-6 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Member" class="w-12 h-12 rounded-full object-cover border-2 border-gold-400">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Hendrik Pratama</h4>
+                                <p class="text-xs text-gold-400">Creator Activator Graduate</p>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="Member Art" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-sm text-gray-300 italic">"Berkat modul Art Business dan dukungan 4.900+ member, saya berhasil menjual 6 lukisan kanvas besar bulan ini."</p>
+                    </div>
+
+                    <div class="bg-obsidian-800 border border-white/10 rounded-2xl p-6 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Member" class="w-12 h-12 rounded-full object-cover border-2 border-gold-400">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Sofia Laurent</h4>
+                                <p class="text-xs text-gold-400">Portrait Challenge Winner</p>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=600&q=80" alt="Member Art" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-sm text-gray-300 italic">"Komunitas paling suportif! Sesi Live Studio setiap minggu membuat saya merasa belajar langsung di dalam studio pribadi."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: MULTILINGUAL SUBTITLES BANNER -->
+        <section class="py-12 bg-gradient-to-r from-obsidian-950 via-obsidian-800 to-obsidian-950 border-b border-gold-500/20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 text-gold-400 text-sm font-bold uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-language text-lg"></i> Global Accessibility
+                </div>
+                <h2 class="font-display font-bold text-2xl sm:text-4xl text-white mb-3" data-i18n="sub_title">
+                    Multilingual Subtitles Available!
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg mb-6" data-i18n="sub_desc">
+                    Seluruh demonstrasi di <strong>YZD ARY COMMUNITY</strong> kini tersedia dengan teks terjemahan dalam:
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+                    <span class="px-4 py-2 rounded-full bg-gold-500/20 border border-gold-400 text-gold-200 text-xs sm:text-sm font-bold">🇮🇩 Bahasa Indonesia</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇬🇧 English</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇪🇸 Español</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇫🇷 Français</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇩🇪 Deutsch</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇮🇹 Italiano</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900 border border-white/15 text-gray-200 text-xs sm:text-sm font-medium">🇵🇹 Português</span>
+                    <span class="px-4 py-2 rounded-full bg-obsidian-900/50 border border-dashed border-gold-500/40 text-gold-400 text-xs sm:text-sm">🇯🇵 🇨🇳 🇮🇳 Coming Soon!</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: NOT JUST ANOTHER PAINTING COURSE -->
+        <section id="features" class="py-20 lg:py-28 bg-obsidian-950 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mb-4" data-i18n="not_just_title">
+                        Bukan Sekadar Kursus Melukis Biasa...
+                    </h2>
+                    <p class="text-gold-400 text-lg font-medium" data-i18n="not_just_sub">
+                        Buka akses instan ke ekosistem pembelajaran seni terlengkap:
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Checklist -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="flex gap-4 p-4 rounded-2xl bg-obsidian-900/90 border border-white/10 card-hover">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 text-xl">
+                                <i class="fa-solid fa-clapperboard"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Lebih dari 500 Jam Konten Premium HD</h3>
+                                <p class="text-gray-400 text-sm sm:text-base">Kursus terstruktur yang dirancang untuk meningkatkan teknik melukis Anda secara instan!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl bg-obsidian-900/90 border border-white/10 card-hover">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 text-xl">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Detailed Critiques (Bedah & Kritik Karya)</h3>
+                                <p class="text-gray-400 text-sm sm:text-base">Menampilkan dan mengevaluasi karya asli dari anggota komunitas kami untuk perbaikan langsung.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl bg-obsidian-900/90 border border-white/10 card-hover">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 text-xl">
+                                <i class="fa-solid fa-tower-broadcast"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Weekly Livestreams (Siaran Langsung Mingguan)</h3>
+                                <p class="text-gray-400 text-sm sm:text-base">Anggota VIP YZD ARY COMMUNITY mendapatkan jawaban langsung atas pertanyaan mereka secara LIVE!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl bg-obsidian-900/90 border border-white/10 card-hover">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 text-xl">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Art Business (Bisnis Seni Profesional)</h3>
+                                <p class="text-gray-400 text-sm sm:text-base">Ingin menjadi pelukis profesional berpenghasilan tinggi? Ikuti program khusus <em>Creator Activator Course</em> kami!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4 rounded-2xl bg-obsidian-900/90 border border-white/10 card-hover">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0 text-xl">
+                                <i class="fa-solid fa-users-rays"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Komunitas Eksklusif + Bonus Melimpah</h3>
+                                <p class="text-gray-400 text-sm sm:text-base">Keluarga berdedikasi dengan 4.900+ seniman dunia, Art Challenges, paket foto referensi bebas royalti (Royalty-Free Reference Packs), serta diskon peralatan lukis!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card -->
+                    <div class="lg:col-span-5 bg-gradient-to-b from-obsidian-900 to-obsidian-800 border border-gold-500/30 rounded-3xl p-8 shadow-2xl space-y-6">
+                        <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=900&q=80" 
+                             alt="Masterpiece Details" 
+                             class="w-full h-56 object-cover rounded-2xl border border-white/10">
+                        <div class="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                Anda dapat belajar sesuai ritme Anda sendiri dan menonton materi yang disesuaikan dengan minat Anda. Ambil kursus <strong>Fundamentals</strong> untuk menguasai pencampuran warna, sapuan kuas, komposisi, dan material, atau pelajari teknik detail tingkat tinggi yang menghidupkan kanvas Anda.
+                            </p>
+                            <p class="font-semibold text-white">
+                                Selalu ada materi berharga di dalam YZD ARY COMMUNITY untuk Anda, di mana pun posisi perjalanan seni Anda saat ini!
+                            </p>
+                            <p class="text-gold-300 font-bold">
+                                Anda akan mempelajari metode baru yang benar-benar efektif dan melihat peningkatan nyata di depan kanvas Anda — DIJAMIN (GUARANTEED)!
+                            </p>
+                        </div>
+                        <a href="#pricing" class="block w-full text-center gold-btn text-obsidian-950 font-extrabold py-4 rounded-xl uppercase tracking-wide">
+                            Join YZD ARY COMMUNITY!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: COURSES GRID -->
+        <section id="courses" class="py-20 lg:py-28 bg-obsidian-900 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-gold-400">Complete Curriculum</span>
+                    <h2 class="font-display font-bold text-2xl sm:text-4xl text-white mt-2 mb-4" data-i18n="courses_heading">
+                        Saat Anda mendaftar di YZD ARY COMMUNITY, Anda langsung mendapatkan akses ke seluruh kursus berikut + lebih banyak lagi!
+                    </h2>
+                </div>
+
+                <!-- Interactive Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+                    <button onclick="filterCourses('all')" class="course-tab active-tab px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-gold-500 text-obsidian-950 transition" data-category="all">
+                        Semua Kursus (8)
+                    </button>
+                    <button onclick="filterCourses('technique')" class="course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian-800 text-gray-300 hover:text-white border border-white/10 transition" data-category="technique">
+                        Teknik & Fundamental
+                    </button>
+                    <button onclick="filterCourses('landscape')" class="course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian-800 text-gray-300 hover:text-white border border-white/10 transition" data-category="landscape">
+                        Landscape & Plein Air
+                    </button>
+                    <button onclick="filterCourses('portrait')" class="course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian-800 text-gray-300 hover:text-white border border-white/10 transition" data-category="portrait">
+                        Potret & Kritik
+                    </button>
+                    <button onclick="filterCourses('business')" class="course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian-800 text-gray-300 hover:text-white border border-white/10 transition" data-category="business">
+                        Bisnis Seni
+                    </button>
+                </div>
+
+                <!-- Courses Cards Container -->
+                <div id="coursesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Course 1: Oil Painting Fundamentals -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="technique">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Oil Painting Fundamentals" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Fundamental</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Oil Painting Fundamentals</h3>
+                                <p class="text-sm text-gray-400">Complete breakdown of process and materials! Panduan tuntas alat, pencampuran warna, dan sapuan kuas dasar.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 45+ Jam Video</span>
+                            <button onclick="openCoursePreview('Oil Painting Fundamentals', 'Panduan lengkap memahami proses, medium, kuas, kanvas, dan teori pencampuran warna dari nol hingga mahir.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 2: Landscapes -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="landscape">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Landscape Painting" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Masterclass</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Epic Landscapes in Oil</h3>
+                                <p class="text-sm text-gray-400">Learn the landscape painting with oils! Menguasai kedalaman atmosfer, pegunungan, langit dramatis, dan air.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 120+ Jam Video</span>
+                            <button onclick="openCoursePreview('Epic Landscapes in Oil', 'Teknik melukis pemandangan epik dengan pencahayaan dramatis, kabut atmosferik, dan refleksi air yang tampak hidup.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 3: Essence of Trees -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="landscape">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Essence of Trees" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Spesialis</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Capturing the Essence of Trees</h3>
+                                <p class="text-sm text-gray-400">Let me walk you through some awesome techniques for capturing the essence of trees, foliage, and bark light!</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 38+ Jam Video</span>
+                            <button onclick="openCoursePreview('Capturing the Essence of Trees', 'Rahasia melukis dedaunan, struktur dahan, dan cahaya menembus rimbun pepohonan tanpa terlihat kaku.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 4: Plein Air Demonstrations -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="landscape">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80" alt="Plein Air" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Outdoor</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Plein Air Demonstrations</h3>
+                                <p class="text-sm text-gray-400">Let's get inspired by the outdoors with these Plein Air demonstrations! Melukis langsung di alam terbuka.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 65+ Jam Video</span>
+                            <button onclick="openCoursePreview('Plein Air Demonstrations', 'Menangkap cahaya alami secara cepat dan akurat langsung di lokasi terbuka bersama Yzd Ary.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 5: Creator Activator (Art Business) -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="business">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Creator Activator" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-gold-500 text-obsidian-950 text-xs font-extrabold">Art Business</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Creator Activator Course</h3>
+                                <p class="text-sm text-gray-400">Enter the world of Art Business! Strategi pemasaran, pameran galeri, komisi lukisan, dan membangun brand seniman.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 40+ Jam Modul</span>
+                            <button onclick="openCoursePreview('Creator Activator Course', 'Blueprint bisnis seni untuk mengubah hobi melukis menjadi karier profesional berpenghasilan tinggi.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 6: Member Critiques -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="portrait">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Critiques" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Evaluasi</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Detailed Member Critiques</h3>
+                                <p class="text-sm text-gray-400">Yzd Ary critiques art made by Community members! Bedah proporsi, anatomi, value, dan komposisi karya member.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 80+ Episode</span>
+                            <button onclick="openCoursePreview('Detailed Member Critiques', 'Belajar dari koreksi langsung dan simulasi digital paint-over pada karya-karya anggota komunitas.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 7: Portraits & Realism -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="portrait">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?auto=format&fit=crop&w=600&q=80" alt="Portraits" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Realisme</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Portraits & Skin Tones</h3>
+                                <p class="text-sm text-gray-400">Menguasai struktur anatomi wajah, pencampuran warna kulit hidup (flesh tones), dan ekspresi mata yang mendalam.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 75+ Jam Video</span>
+                            <button onclick="openCoursePreview('Portraits & Skin Tones', 'Teknik Old Masters dalam melukis potret wajah dengan kemiripan presisi dan pencahayaan chiaroscuro.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 8: Wildlife & Still Life -->
+                    <div class="course-card bg-obsidian-950 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between card-hover" data-cat="technique">
+                        <div>
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=600&q=80" alt="Wildlife and Still Life" class="w-full h-full object-cover">
+                                <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-obsidian-950/85 text-gold-400 text-xs font-bold border border-gold-500/30">Tekstur</span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="font-display font-bold text-lg text-white mb-2">Still Life & Wildlife Mastery</h3>
+                                <p class="text-sm text-gray-400">Eksplorasi tekstur kaca, logam, bunga, hingga detail bulu satwa liar dengan ketajaman fotorealistis.</p>
+                            </div>
+                        </div>
+                        <div class="px-5 pb-5 pt-2 border-t border-white/5 flex items-center justify-between text-xs text-gold-300">
+                            <span><i class="fa-regular fa-clock mr-1"></i> 60+ Jam Video</span>
+                            <button onclick="openCoursePreview('Still Life & Wildlife Mastery', 'Latihan pengamatan cahaya, pantulan objek benda mati, serta tekstur satwa liar tingkat tinggi.')" class="font-bold hover:underline">Detail →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: PRICING / MEMBERSHIP -->
+        <section id="pricing" class="py-20 lg:py-28 bg-obsidian-950 border-b border-white/5 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="px-4 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-widest">
+                        Start Your Artistic Journey
+                    </span>
+                    <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mt-4 mb-4">
+                        Pilih Paket Keanggotaan YZD ARY COMMUNITY
+                    </h2>
+                    <p class="text-gray-400 text-base sm:text-lg">
+                        Akses penuh tanpa batas ke seluruh 500+ jam perpustakaan video, komunitas global, dan sesi Live Studio. Batalkan kapan saja.
+                    </p>
+
+                    <!-- Currency / Billing Switcher -->
+                    <div class="mt-8 inline-flex items-center p-1.5 rounded-xl bg-obsidian-900 border border-white/10">
+                        <button id="monthlyBtn" onclick="setBilling('monthly')" class="px-5 py-2.5 rounded-lg text-sm font-bold bg-gold-500 text-obsidian-950 transition">
+                            Bulanan (Monthly)
+                        </button>
+                        <button id="annualBtn" onclick="setBilling('annual')" class="px-5 py-2.5 rounded-lg text-sm font-bold text-gray-300 hover:text-white transition flex items-center gap-2">
+                            <span>Tahunan (Annual)</span>
+                            <span class="px-2 py-0.5 text-[10px] rounded-full bg-green-500/20 text-green-400 border border-green-500/30">Hemat 20%</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Standard Academy Tier -->
+                    <div class="bg-obsidian-900 border border-white/15 rounded-3xl p-8 flex flex-col justify-between card-hover">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h3 class="font-display font-bold text-2xl text-white">Academy Member</h3>
+                                    <p class="text-xs text-gray-400">Cocok untuk belajar mandiri & akses materi penuh</p>
+                                </div>
+                                <span class="w-12 h-12 rounded-2xl bg-obsidian-800 border border-white/10 flex items-center justify-center text-gold-400 text-xl">
+                                    <i class="fa-solid fa-paintbrush"></i>
+                                </span>
+                            </div>
+
+                            <div class="my-6 pb-6 border-b border-white/10">
+                                <div class="flex items-baseline gap-2">
+                                    <span id="stdPrice" class="font-display font-extrabold text-4xl sm:text-5xl text-white">Rp 450.000</span>
+                                    <span id="stdPeriod" class="text-gray-400 text-sm">/ bulan</span>
+                                </div>
+                                <p id="stdUsd" class="text-xs text-gold-400 mt-1">Setara ~$29 USD • Tagihan fleksibel</p>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm sm:text-base text-gray-300 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span>Akses instan ke <strong>500+ Jam Video Kursus HD</strong></span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span>Semua kurikulum (Fundamentals, Landscapes, Portraits, Trees, Plein Air)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span>Akses penuh ke <strong>Komunitas Eksklusif 4.900+ Seniman</strong></span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span>Multilingual Subtitles (Indonesia, Inggris, Spanyol, Prancis, dll)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span>Paket Foto Referensi Bebas Royalti & Tantangan Bulanan</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openCheckout('Academy Member')" class="w-full py-4 rounded-xl bg-obsidian-800 hover:bg-obsidian-700 border border-gold-500/40 text-white font-bold uppercase tracking-wide transition">
+                            Pilih Academy Member
+                        </button>
+                    </div>
+
+                    <!-- VIP All-Access Tier -->
+                    <div class="bg-gradient-to-b from-obsidian-900 via-obsidian-900 to-obsidian-800 border-2 border-gold-400 rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-gold-500/10 card-hover">
+                        <div class="absolute -top-4 right-6 px-4 py-1 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-obsidian-950 font-extrabold text-xs uppercase tracking-wider shadow-lg">
+                            Most Popular • VIP Access
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <h3 class="font-display font-bold text-2xl text-white">Academy VIP + Business</h3>
+                                    <p class="text-xs text-gold-300">Pengalaman penuh dengan sesi LIVE & Bisnis Seni</p>
+                                </div>
+                                <span class="w-12 h-12 rounded-2xl bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 text-xl">
+                                    <i class="fa-solid fa-crown"></i>
+                                </span>
+                            </div>
+
+                            <div class="my-6 pb-6 border-b border-white/10">
+                                <div class="flex items-baseline gap-2">
+                                    <span id="vipPrice" class="font-display font-extrabold text-4xl sm:text-5xl gold-gradient-text">Rp 750.000</span>
+                                    <span id="vipPeriod" class="text-gray-400 text-sm">/ bulan</span>
+                                </div>
+                                <p id="vipUsd" class="text-xs text-gold-400 mt-1">Setara ~$49 USD • Akses Prioritas VIP</p>
+                            </div>
+
+                            <ul class="space-y-3.5 text-sm sm:text-base text-gray-200 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-gold-400 mt-1"></i>
+                                    <span><strong>Semua fasilitas Academy Member</strong> ditambah:</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-star text-gold-400 mt-1"></i>
+                                    <span><strong>Weekly Studio Livestreams:</strong> Tanya jawab interaktif LIVE setiap minggu bersama Yzd Ary!</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-star text-gold-400 mt-1"></i>
+                                    <span><strong>Creator Activator Course:</strong> Modul lengkap membangun bisnis seni & menjual lukisan mahal</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-star text-gold-400 mt-1"></i>
+                                    <span><strong>Prioritas Detailed Critiques:</strong> Kirim karya Anda untuk dibedah langsung oleh instruktur</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-star text-gold-400 mt-1"></i>
+                                    <span>Diskon Eksklusif Peralatan Seni & Kode Promo Mitra</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button onclick="openCheckout('Academy VIP + Business')" class="w-full py-4 rounded-xl gold-btn text-obsidian-950 font-extrabold uppercase tracking-wide">
+                            Join YZD ARY VIP Today!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Guarantee Box -->
+                <div class="mt-12 max-w-3xl mx-auto p-6 rounded-2xl bg-obsidian-900/80 border border-gold-500/20 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                    <div class="w-16 h-16 rounded-full bg-gold-500/15 border border-gold-400 flex items-center justify-center text-gold-400 text-3xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-white text-lg">100% Tangible Improvement Guaranteed</h4>
+                        <p class="text-sm text-gray-400 mt-1">
+                            Kami menjamin Anda akan mempelajari metode baru yang efektif dan melihat peningkatan nyata pada kanvas Anda. Tidak ada kontrak mengikat — Anda memiliki kendali penuh atas langganan Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: FAQ -->
+        <section class="py-16 lg:py-24 bg-obsidian-900 border-b border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-center text-white mb-12">
+                    Pertanyaan yang Sering Diajukan (FAQ)
+                </h2>
+                <div class="space-y-4">
+                    <div class="border border-white/10 rounded-2xl bg-obsidian-950 overflow-hidden">
+                        <button onclick="toggleFaq(0)" class="w-full p-5 text-left flex items-center justify-between font-bold text-white hover:text-gold-400 transition">
+                            <span>Apakah saya harus sudah mahir melukis untuk bergabung di YZD ARY COMMUNITY?</span>
+                            <i id="faqIcon0" class="fa-solid fa-plus text-gold-400 transition-transform"></i>
+                        </button>
+                        <div id="faqContent0" class="hidden px-5 pb-5 text-sm sm:text-base text-gray-400 border-t border-white/5 pt-4">
+                            Sama sekali tidak! Kami melayani SEMUA level keahlian. Kursus <em>Oil Painting Fundamentals</em> kami dirancang khusus untuk memandu pemula dari cara memegang kuas, menyiapkan palet, hingga menyelesaikan lukisan pertama Anda.
+                        </div>
+                    </div>
+
+                    <div class="border border-white/10 rounded-2xl bg-obsidian-950 overflow-hidden">
+                        <button onclick="toggleFaq(1)" class="w-full p-5 text-left flex items-center justify-between font-bold text-white hover:text-gold-400 transition">
+                            <span>Bagaimana jika saya sibuk dan tidak punya banyak waktu luang?</span>
+                            <i id="faqIcon1" class="fa-solid fa-plus text-gold-400 transition-transform"></i>
+                        </button>
+                        <div id="faqContent1" class="hidden px-5 pb-5 text-sm sm:text-base text-gray-400 border-t border-white/5 pt-4">
+                            Seluruh 500+ jam video kursus dan rekaman sesi Live Studio dapat diakses 24/7. Anda dapat belajar sesuai kecepatan Anda sendiri (<em>self-paced</em>) kapan pun Anda memiliki waktu luang.
+                        </div>
+                    </div>
+
+                    <div class="border border-white/10 rounded-2xl bg-obsidian-950 overflow-hidden">
+                        <button onclick="toggleFaq(2)" class="w-full p-5 text-left flex items-center justify-between font-bold text-white hover:text-gold-400 transition">
+                            <span>Apakah tersedia subtitle Bahasa Indonesia dan bahasa lainnya?</span>
+                            <i id="faqIcon2" class="fa-solid fa-plus text-gold-400 transition-transform"></i>
+                        </button>
+                        <div id="faqContent2" class="hidden px-5 pb-5 text-sm sm:text-base text-gray-400 border-t border-white/5 pt-4">
+                            Ya! Seluruh demonstrasi utama dilengkapi dengan fitur <em>Multilingual Subtitles</em> termasuk Bahasa Indonesia, Inggris, Spanyol, Prancis, Jerman, Italia, dan Portugis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-obsidian-950 py-12 border-t border-white/10 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center text-obsidian-950 font-display font-extrabold text-lg">
+                        YA
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-white text-lg tracking-wider">YZD ARY COMMUNITY</span>
+                        <p class="text-xs text-gray-500">This is what Art School should be!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="#about" class="hover:text-gold-400 transition">About</a>
+                    <a href="#courses" class="hover:text-gold-400 transition">Courses</a>
+                    <button onclick="openModal('contactModal')" class="hover:text-gold-400 transition">Contact</button>
+                    <button onclick="openModal('loginModal')" class="hover:text-gold-400 transition">Log In</button>
+                </div>
+
+                <div class="flex items-center gap-4 text-lg">
+                    <a href="#community" class="w-10 h-10 rounded-full bg-obsidian-900 border border-white/10 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#community" class="w-10 h-10 rounded-full bg-obsidian-900 border border-white/10 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#community" class="w-10 h-10 rounded-full bg-obsidian-900 border border-white/10 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>© 2026 YZD ARY COMMUNITY. All Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <span>Terms of Service</span>
+                    <span>Privacy Policy</span>
+                    <span>Member Portal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: VIDEO TRAILER -->
+    <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-obsidian-900 border border-gold-500/40 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+                <h3 class="font-display font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-play-circle text-gold-400"></i> YZD ARY COMMUNITY — Official Studio Trailer
+                </h3>
+                <button onclick="closeModal('videoModal')" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 text-center space-y-6">
+                <div class="aspect-video rounded-xl bg-obsidian-950 border border-white/10 flex flex-col items-center justify-center p-8 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80" alt="Preview" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                    <div class="relative z-10 max-w-md space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-gold-500/20 border border-gold-400 text-gold-400 flex items-center justify-center mx-auto text-2xl animate-pulse">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-2xl text-white">"This is What Art School Should Be!"</h4>
+                        <p class="text-sm text-gray-300">
+                            Di dalam portal anggota YZD ARY COMMUNITY, Anda dapat memutar lebih dari 500 jam demonstrasi melukis beresolusi 4K HD lengkap dengan fitur pemilihan bahasa subtitle.
+                        </p>
+                        <a href="#pricing" onclick="closeModal('videoModal')" class="inline-block gold-btn text-obsidian-950 font-bold text-sm px-6 py-3 rounded-lg uppercase">
+                            Buka Akses Seluruh Video Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: COURSE DETAIL PREVIEW -->
+    <div id="courseModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-obsidian-900 border border-gold-500/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <h3 id="modalCourseTitle" class="font-display font-bold text-xl text-white">Course Title</h3>
+                <button onclick="closeModal('courseModal')" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="py-5 space-y-4">
+                <p id="modalCourseDesc" class="text-gray-300 text-sm leading-relaxed"></p>
+                <div class="p-4 rounded-xl bg-obsidian-950 border border-white/10 text-xs text-gray-300 space-y-2">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Video Demonstrasi Langkah Demi Langkah (Full-Length)</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Daftar Peralatan & Campuran Warna Lengkap</div>
+                    <div class="fa-solid-wrapper flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Foto Referensi Resolusi Tinggi (Royalty-Free)</div>
+                </div>
+            </div>
+            <div class="flex justify-end gap-3 pt-3 border-t border-white/10">
+                <button onclick="closeModal('courseModal')" class="px-4 py-2 rounded-lg bg-obsidian-800 text-gray-300 text-sm">Tutup</button>
+                <a href="#pricing" onclick="closeModal('courseModal')" class="px-5 py-2 rounded-lg gold-btn text-obsidian-950 font-bold text-sm">Daftar untuk Akses</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: LOGIN PORTAL -->
+    <div id="loginModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-obsidian-900 border border-white/15 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="font-display font-bold text-2xl text-white">Member Log In</h3>
+                    <p class="text-xs text-gray-400">Masuk ke Portal Akademi YZD ARY COMMUNITY</p>
+                </div>
+                <button onclick="closeModal('loginModal')" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Login berhasil! Mengalihkan Anda ke dashboard member YZD ARY COMMUNITY...', 'loginModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Alamat Email</label>
+                    <input type="email" required placeholder="artist@email.com" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Kata Sandi</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl gold-btn text-obsidian-950 font-extrabold uppercase text-sm">
+                    Log In ke Akademi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 4: CONTACT US -->
+    <div id="contactModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-obsidian-900 border border-white/15 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="font-display font-bold text-2xl text-white">Hubungi Tim Kami</h3>
+                    <p class="text-xs text-gray-400">Punya pertanyaan seputar YZD ARY COMMUNITY?</p>
+                </div>
+                <button onclick="closeModal('contactModal')" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Pesan Anda telah terkirim! Tim dukungan YZD ARY COMMUNITY akan membalas ke email Anda.', 'contactModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Nama Lengkap</label>
+                    <input type="text" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Email</label>
+                    <input type="email" required placeholder="email@domain.com" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Pesan / Pertanyaan</label>
+                    <textarea rows="3" required placeholder="Tulis pertanyaan Anda..." class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 rounded-xl gold-btn text-obsidian-950 font-extrabold uppercase text-sm">
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 5: CHECKOUT SIGN UP -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-obsidian-900 border border-gold-500/40 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-gold-400">Instant Access Registration</span>
+                    <h3 id="checkoutPlanName" class="font-display font-bold text-2xl text-white">Academy VIP</h3>
+                </div>
+                <button onclick="closeModal('checkoutModal')" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form onsubmit="handleFormSubmit(event, 'Selamat bergabung di YZD ARY COMMUNITY! Akun Anda telah aktif dan siap mengakses 500+ jam kursus.', 'checkoutModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Nama Seniman / Lengkap</label>
+                    <input type="text" required placeholder="Masukkan nama lengkap" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Alamat Email Aktif</label>
+                    <input type="email" required placeholder="Untuk pengiriman akses akun" class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-400 mb-1.5">Tingkat Keahlian Saat Ini</label>
+                    <select class="w-full px-4 py-3 rounded-xl bg-obsidian-950 border border-white/15 text-white text-sm focus:outline-none focus:border-gold-400">
+                        <option value="beginner">Beginner (Pemula)</option>
+                        <option value="intermediate">Intermediate (Menengah)</option>
+                        <option value="advanced">Advanced / Pro (Mahir)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl gold-btn text-obsidian-950 font-extrabold uppercase text-sm tracking-wide">
+                    Selesaikan Pendaftaran Sekarang
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toastBanner" class="fixed bottom-6 right-6 z-50 hidden max-w-sm bg-obsidian-900 border-2 border-gold-400 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold-400 text-xl"></i>
+        <p id="toastMessage" class="text-sm font-medium"></p>
+    </div>
+
+    <script>
+        // Bilingual Dictionary (Indonesian & Original English style)
+        const translations = {
+            id: {
+                top_banner: "Pendaftaran Anggota Baru Dibuka! Akses 500+ Jam Materi Lukis HD & Sesi Live Studio Mingguan.",
+                nav_about: "Tentang Kami",
+                nav_features: "Fitur & Keunggulan",
+                nav_courses: "Kurikulum",
+                nav_community: "Komunitas",
+                nav_pricing: "Keanggotaan",
+                nav_contact: "Contact",
+                nav_login: "Log In",
+                nav_join: "Sign Up Today!",
+                hero_welcome: "WELCOME TO",
+                hero_subtitle: "\"This is what Art School should be!\" — Beginilah Seharusnya Sekolah Seni!",
+                hero_watch_trailer: "Tonton Cuplikan Eksklusif YZD ARY COMMUNITY (2:45)",
+                hero_desc: "<strong>YZD ARY COMMUNITY</strong> memberdayakan para seniman dengan keahlian teknik tingkat tinggi dan dukungan komunitas yang mereka butuhkan untuk membawa karya seni mereka ke <span class='text-gold-400 font-bold italic underline'>NEXT LEVEL!</span>",
+                cta_signup: "Sign Up Today!",
+                cta_explore: "Lihat 500+ Jam Kursus",
+                what_title: "Apa itu YZD ARY COMMUNITY?",
+                what_p1: "<strong>YZD ARY COMMUNITY</strong> adalah <strong class='text-white'>pendidikan seni online yang benar-benar berhasil (actually works)</strong>.",
+                what_p2: "Halo! Saya <strong>Yzd Ary</strong>, pendiri dan instruktur utama Anda. Selama lebih dari 20 tahun berkarya sebagai seniman profesional, saya telah mendedikasikan hidup saya untuk mengasah keahlian melukis, dan sekarang saya ingin membagikan kepada Anda <strong>SECARA PERSIS</strong> bagaimana saya menciptakan setiap mahakarya.",
+                what_p3: "Saya menghabiskan bertahun-tahun mempelajari teknik para maestro klasik (<em>Old Masters</em>) — lalu membedahnya menjadi metode yang sangat mudah dipahami sehingga Anda dapat langsung menerapkannya pada karya Anda dan mempercepat waktu kreatif Anda berkali-kali lipat.",
+                what_p4: "Di <strong>YZD ARY COMMUNITY</strong>, Anda akan menerima instruksi mendalam yang membedah setiap aspek lukisan secara teliti. Anda akan dipandu langkah demi langkah melalui demonstrasi melukis berdurasi penuh — dengan setiap teknik dijelaskan secara transparan. Kami bahkan mengadakan sesi <strong>LIVE dari studio setiap minggu</strong>!",
+                what_quote: "\"Ini adalah pendidikan seni sejati yang benar-benar memberikan hasil nyata!\"",
+                who_title: "Untuk Siapa YZD ARY COMMUNITY?",
+                who_subtitle: "Kami melayani SEMUA tingkatan keahlian, dari pemula hingga profesional!",
+                who_pace: "Dan bagian terbaiknya — Anda dapat belajar sesuai kecepatan Anda sendiri (learn at your own pace)!",
+                cta_join_community: "Join YZD ARY COMMUNITY!",
+                comm_title: "Bagikan Karya Anda dan Temukan Sahabat Baru!",
+                sub_title: "Multilingual Subtitles Available!",
+                not_just_title: "Bukan Sekadar Kursus Melukis Biasa...",
+                not_just_sub: "Buka akses instan ke ekosistem pembelajaran seni terlengkap:",
+                courses_heading: "Saat Anda mendaftar di YZD ARY COMMUNITY, Anda langsung mendapatkan akses ke seluruh kursus berikut + lebih banyak lagi!"
+            },
+            en: {
+                top_banner: "New Member Enrollment Now Open! Unlock 500+ Hours of HD Content & Weekly Studio Livestreams.",
+                nav_about: "What is YZD ARY?",
+                nav_features: "Features",
+                nav_courses: "Courses",
+                nav_community: "Community",
+                nav_pricing: "Pricing",
+                nav_contact: "Contact",
+                nav_login: "Log In",
+                nav_join: "Sign Up Today!",
+                hero_welcome: "WELCOME TO",
+                hero_subtitle: "This is what Art School should be!",
+                hero_watch_trailer: "Watch YZD ARY COMMUNITY Official Studio Preview (2:45)",
+                hero_desc: "<strong>YZD ARY COMMUNITY</strong> empowers artists with the skills and support they need to take their art to the <span class='text-gold-400 font-bold italic underline'>NEXT LEVEL!</span>",
+                cta_signup: "Sign Up Today!",
+                cta_explore: "Explore 500+ Hours",
+                what_title: "What is YZD ARY COMMUNITY?",
+                what_p1: "<strong>YZD ARY COMMUNITY</strong> is <strong class='text-white'>online art education that actually works</strong>.",
+                what_p2: "Hi! I’m <strong>Yzd Ary</strong>. I’ve been a professional artist for the last 20 years and I’ve dedicated my life to honing my craft in painting, and now I want to share with you <strong>EXACTLY</strong> how I do what I do.",
+                what_p3: "I’ve spent years studying the old masters and learning their techniques - then breaking that down in an easy to understand way so you can apply this to your work and super-charge your creative time.",
+                what_p4: "At <strong>YZD ARY COMMUNITY</strong> you'll receive unparalleled instruction that painstakingly breaks down every aspect of oil painting. You'll be guided step-by-step through the entire process in feature length painting demonstrations. We even go <strong>LIVE from the studio every week</strong> - these sessions are jam-packed, informative and fun!",
+                what_quote: "\"This is real art education that actually works!\"",
+                who_title: "Who is YZD ARY COMMUNITY For?",
+                who_subtitle: "We cater to ALL skill levels, from beginner to pro!",
+                who_pace: "And the best part - you can learn at your own pace!",
+                cta_join_community: "Join YZD ARY COMMUNITY!",
+                comm_title: "Share your creations and make some new friends!",
+                sub_title: "Multilingual Subtitles Available!",
+                not_just_title: "Not Just Another Painting Course...",
+                not_just_sub: "Unlock instant access to:",
+                courses_heading: "When you sign up to YZD ARY COMMUNITY you get access to the following courses + more!"
+            }
+        };
+
+        let currentLang = 'id';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            document.getElementById('currentLangLabel').textContent = currentLang.toUpperCase();
+            
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            showToast(currentLang === 'id' ? 'Bahasa diubah ke Bahasa Indonesia' : 'Language switched to English');
+        }
+
+        // Course Category Filter
+        function filterCourses(category) {
+            const cards = document.querySelectorAll('.course-card');
+            const tabs = document.querySelectorAll('.course-tab');
+
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.className = "course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-gold-500 text-obsidian-950 transition";
+                } else {
+                    tab.className = "course-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian-800 text-gray-300 hover:text-white border border-white/10 transition";
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Pricing Billing Switcher
+        function setBilling(mode) {
+            const monthlyBtn = document.getElementById('monthlyBtn');
+            const annualBtn = document.getElementById('annualBtn');
+            const stdPrice = document.getElementById('stdPrice');
+            const stdPeriod = document.getElementById('stdPeriod');
+            const stdUsd = document.getElementById('stdUsd');
+            const vipPrice = document.getElementById('vipPrice');
+            const vipPeriod = document.getElementById('vipPeriod');
+            const vipUsd = document.getElementById('vipUsd');
+
+            if (mode === 'annual') {
+                annualBtn.className = "px-5 py-2.5 rounded-lg text-sm font-bold bg-gold-500 text-obsidian-950 transition flex items-center gap-2";
+                monthlyBtn.className = "px-5 py-2.5 rounded-lg text-sm font-bold text-gray-300 hover:text-white transition";
+                stdPrice.textContent = "Rp 4.320.000";
+                stdPeriod.textContent = "/ tahun";
+                stdUsd.textContent = "Hemat Rp 1.080.000 per tahun (~$279 USD/yr)";
+                vipPrice.textContent = "Rp 7.200.000";
+                vipPeriod.textContent = "/ tahun";
+                vipUsd.textContent = "Hemat Rp 1.800.000 per tahun (~$470 USD/yr)";
+            } else {
+                monthlyBtn.className = "px-5 py-2.5 rounded-lg text-sm font-bold bg-gold-500 text-obsidian-950 transition";
+                annualBtn.className = "px-5 py-2.5 rounded-lg text-sm font-bold text-gray-300 hover:text-white transition flex items-center gap-2";
+                stdPrice.textContent = "Rp 450.000";
+                stdPeriod.textContent = "/ bulan";
+                stdUsd.textContent = "Setara ~$29 USD • Tagihan fleksibel";
+                vipPrice.textContent = "Rp 750.000";
+                vipPeriod.textContent = "/ bulan";
+                vipUsd.textContent = "Setara ~$49 USD • Akses Prioritas VIP";
+            }
+        }
+
+        // FAQ Accordion
+        function toggleFaq(index) {
+            const content = document.getElementById(`faqContent${index}`);
+            const icon = document.getElementById(`faqIcon${index}`);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.replace('fa-plus', 'fa-minus');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.replace('fa-minus', 'fa-plus');
+            }
+        }
+
+        // Modal Handlers
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function openCoursePreview(title, desc) {
+            document.getElementById('modalCourseTitle').textContent = title;
+            document.getElementById('modalCourseDesc').textContent = desc;
+            openModal('courseModal');
+        }
+
+        function openCheckout(planName) {
+            document.getElementById('checkoutPlanName').textContent = planName;
+            openModal('checkoutModal');
+        }
+
+        function handleFormSubmit(event, message, modalId) {
+            event.preventDefault();
+            closeModal(modalId);
+            showToast(message);
+            event.target.reset();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastBanner');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
